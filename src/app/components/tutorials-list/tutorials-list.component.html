@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="ค้นหาโดยชื่อผู้ใช้..."
+        [(ngModel)]="fname"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchTitle()"
+        >
+          ค้นหา
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="list row mt-4">
+  <div class="col-md-6">
+    <ul class="list-group">
+      @for (tutorial of tutorials; track tutorial.id; let i = $index) {
+      <li
+        class="list-group-item"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(tutorial, i)"
+      >
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <div class="d-flex align-items-center">
+            <img
+              src="{{ tutorial.avatar }}"
+              alt="{{ tutorial.fname }}"
+              style="width: 45px; margin-right: 20px"
+            />
+            <h5 class="mb-0">{{ tutorial.fname }} {{ tutorial.lname }}</h5>
+          </div>
+          <small>3 days ago</small>
+        </div>
+        <p class="mt-2 mb-0">Hello :)</p>
+        <small>{{ tutorial.username }}</small>
+      </li>
+      }
+    </ul>
+    <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+      Remove All
+    </button> -->
+  </div>
+  <div class="col-md-6">
+    <app-tutorial-details
+      [viewMode]="true"
+      [currentTutorial]="currentTutorial"
+    ></app-tutorial-details>
+  </div>
+</div>

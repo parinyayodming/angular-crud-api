@@ -1,0 +1,10 @@
+.list-group-item.active,
+.list-group-item:hover {
+  z-index: 10;
+  color: black;
+  background-color: #f1f1f1;
+  /* border: none;
+  transform: scale(1.03);
+  border-radius: 10px; */
+  cursor: pointer;
+}

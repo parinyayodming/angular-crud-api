@@ -1,0 +1,76 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <h4 class="mb-4">สร้างผู้ใช้</h4>
+    <div class="form-group">
+      <label for="fname">ชื่อ</label>
+      <input
+        type="text"
+        class="form-control"
+        id="fname"
+        required
+        [(ngModel)]="tutorial.fname"
+        name="fname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lname">นามสกุล</label>
+      <input
+        class="form-control"
+        id="lname"
+        required
+        [(ngModel)]="tutorial.lname"
+        name="lname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="username">ชื่อผู้ใช้</label>
+      <input
+        class="form-control"
+        id="username"
+        required
+        [(ngModel)]="tutorial.username"
+        name="username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">อีเมล</label>
+      <input
+        class="form-control"
+        id="email"
+        required
+        [(ngModel)]="tutorial.email"
+        name="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="avatar">ลิงค์รูปโปรไฟล์</label>
+      <input
+        class="form-control"
+        id="avatar"
+        required
+        [(ngModel)]="tutorial.avatar"
+        name="avatar"
+      />
+    </div>
+    <button
+      (click)="saveTutorial()"
+      type="submit"
+      class="btn btn-outline-success"
+    >
+      สร้าง
+    </button>
+    } @else {
+    <div class="d-flex">
+      <h4>สร้างผู้ใช้สำเร็จ!</h4>
+      <!-- <button
+        type="button"
+        class="btn btn-outline-success ml-5"
+        (click)="newTutorial()"
+      >
+        เพิ่มผู้ใช้
+      </button> -->
+    </div>
+    }
+  </div>
+</div>
